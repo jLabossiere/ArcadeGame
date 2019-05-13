@@ -101,7 +101,7 @@ function collision() {
 	if (player.alive === true) {
 		const livesValue = document.querySelector('.lives-value');
 		game.lives--;
-		player.sprite = 'images/skele.png';
+		player.sprite = '../images/skele.png';
 		player.alive = false;
 		if (game.lives === 0) {
 			gameReset();
@@ -109,7 +109,7 @@ function collision() {
 		setTimeout(() => {
 			if (player.alive === false) {
 				player.alive = true;
-				player.sprite = 'images/char-boy.png';
+				player.sprite = '../images/char-boy.png';
 				player.x = 202;
 				player.y = 390;
 				livesValue.textContent = game.lives;
