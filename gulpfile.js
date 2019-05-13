@@ -28,9 +28,9 @@ gulp.task('copy-images', () => {
 gulp.task('copy-js', () => {
 	return gulp
 		.src([
+			'./src/js/app.js',
 			'./src/js/resources.js',
 			'./src/js/engine.js',
-			'./src/js/app.js',
 			'./src/js/music.js'
 		])
 		.pipe(
@@ -53,6 +53,7 @@ gulp.task('watch', () => {
 	gulp.watch('./src/index.html', gulp.series('copy-HTML'));
 });
 
-gulp.task('all', () => {
-	gulp.parallel('style', 'copy-images', 'copy-js', 'copy-HTML', 'watch');
-});
+gulp.task(
+	'all',
+	gulp.series('style', 'copy-images', 'copy-js', 'copy-HTML', 'watch')
+);
